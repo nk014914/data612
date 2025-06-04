@@ -1,0 +1,36 @@
+---
+title: "Data 612 - Discussion 1"
+author: "Natalie Kalukeerthie"
+date: "2025-06-04"
+output: html_document
+---
+
+### 1. Now that we have covered basic techniques for recommender systems, choose one commercial recommender and describe how you think it works (content-based, collaborative filtering, etc). 
+
+One commercial recommender system I’ve experienced frequently is Apple Music’s recommendation engine. Based on my experience, Apple Music likely uses a combination of content-based filtering and collaborative filtering to personalize its recommendations.
+
+**Content-based filtering:**
+
+Apple Music analyzes characteristics of songs a user listens to, such as genre, artist, tempo, and mood, and recommends similar tracks. This is evident in the personalized playlists like "Chill Mix" or "Favorites Mix", which are tailored to a user’s individual tastes. I believe the algorithm also takes into account of actions by the user, essentially telling Apple what you like and don’t. Not only does selecting “love” or “play less” on a song count, but also liking or disliking playlists and albums, as well as adding songs and albums to libraries.
+
+**Collaborative filtering:**
+
+Apple Music may also leverage the listening habits of users with similar music preferences. For example, if many users who listen to Artist A also listen to Artist B, Apple Music may recommend Artist B to someone who listens to Artist A. The algorithm may also take listening history into account as well when creating curated playlists for listeners.
+
+### Does the technique deliver a good experience or are the recommendations off-target?
+
+In my experience, Apple Music's recommendations are generally on-target, especially for genres or artists I listen to frequently. The system seems to improve over time, suggesting it continuously learns from user behavior. From the years I've been using Apple Music, I've noticed that I have added more and more songs that were recommended to me by the algorithm.
+
+However, the recommendations can at times feel repetitive, as it sometimes suggests the same popular songs rather than helping discover more niche tracks. The system also seems to recommend an artist's entire album when you like a song that they recommended, but sometimes the album might not be a good reflector of the song that was initially liked. Compared to some competitors like Spotify, I think Apple Music seems to put slightly less emphasis on deep exploration. There are a lot less smaller artists on the app so I usually have to go to other music apps for underground music discovery.
+
+### 2. Read the article below and consider how to handle attacks on recommender systems. Can you think of a similar example where a collective effort to alter the workings of content recommendations have been successful?  How would you design a system to prevent this kind of abuse?
+
+In the article, a well-known example of a collective attack on a recommender system is the bombarding of IMDb ratings for the movie *“The Promise”* (2017), where thousands of users (many of whom did not seen the film) flooded it with 1-star reviews. This was largely driven by political motivations due to the film’s subject matter involving the Armenian genocide. The attack manipulated IMDb’s user rating system, ultimately undermining the integrity of the reviews and misleading future viewers. A similar instance happened on Rotten Tomatoes, where *“Captain Marvel”* (2019) faced a coordinated campaign to lower its audience score due to online backlash unrelated to the film’s content and past behavior of the lead actress. Thousands of users posted negative reviews before the movie was released, exploiting the platform’s open rating system and leaving the films score very low.
+
+To prevent such manipulation, I would design the system with the following defenses:
+
+1.  **Verification Requirement**: Only allow users who have interacted meaningfully with the content (e.g., watched a film or listened to a full album) to submit ratings or reviews. Platforms like Netflix already do this by basing recommendations on watch history rather than open reviews. Another option is to vet accounts to prevent people from creating spam accounts, perhaps by not allowing them to post reviews till their account reaches a certain age or they reach a number of written reviews.
+
+2.  **Anomaly Detection Algorithms**: Use machine learning to flag suspicious activity, such as sudden spikes in reviews from new or dormant accounts. These can be temporarily excluded from aggregate scores until verified.
+
+3.   **Weighted Ratings**: Assign credibility scores to users based on their past behavior (e.g., diversity of ratings, account age, consistency), so that trustworthy users have more influence on recommendations. The platform can place a verified badge next to their username so that users can easily see which accounts have credibility.
