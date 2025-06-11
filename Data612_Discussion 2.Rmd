@@ -1,0 +1,14 @@
+---
+title: "Data 612 - Discussion 1"
+author: "Natalie Kalukeerthie"
+date: "2025-06-09"
+output: html_document
+---
+
+### For this discussion item, please watch the following talk and summarize what you found to be the most important or interesting points. The first half will cover some of the mathematical techniques covered in this unit's reading and the second half some of the data management challenges in an industrial-scale recommendation system.
+
+In the video Music Recommendations at Scale with Spark, Christopher Johnson outlines various recommendation strategies companies use, such as manual curation, attribute tagging by humans, automated content-based approaches, and collaborative filtering. Each method has its advantages and trade-offs depending on the user experience and recommendation goals. One particularly interesting point he makes is that some music companies actually employ people to manually tag songs with attributes—an incredibly time-consuming process, yet sometimes necessary to capture the nuances of music that automated systems might miss.
+
+From the first half of the video we see that Spotify uses explicit matrix factorization similar to Netflix, however, instead of explicit ratings, binary labels are used to identify whether or not a user listened to a track. They then applied Alternating Least Squares (ALS) for matrix factorization on this implicit feedback data—modeling preferences from binary or play-count interactions.
+
+He later comes to identify challenges the company faced with with the programs they used, I found it interesting how he explained the pros and cons to the software used for handling their datasets and seeing how Spark was leveraged to demonstrates how in-memory and partition-aware strategies outperform Hadoop for iterative ML workloads. Hadoop was originally built for batch processing large datasets, which works well for one-pass jobs (like counting how many times a song was played). But machine learning algorithms (like collaborative filtering via ALS) require many iterations over the same data. This is very I/O intensive as he mentions, especially when you need to repeat the process dozens of times, like in model training. Switching to spark worked well for Spotify’s recommendation system because it significantly improved the efficiency of iterative ML tasks like ALS (Alternating Least Squares). Unlike Hadoop, which relies heavily on disk I/O and writes intermediate data to disk after each step, Spark keeps data in memory across iterations. This in-memory processing drastically reduces the time spent on reading and writing, making it imporant for algorithms that require repeated passes over the data.
