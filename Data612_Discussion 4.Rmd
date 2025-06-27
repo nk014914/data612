@@ -1,0 +1,24 @@
+---
+title: "Data 612 - Discussion 4"
+author: "Natalie Kalukeerthie"
+date: "2025-06-22"
+output: html_document
+---
+
+### Mitigating the Harm of Recommender Systems
+
+**Read one or more of the articles below and consider how to counter the radicalizing effects of recommender systems or ways to prevent algorithmic discrimination.**
+
+**Renee Diresta, Wired.com (2018): Up Next: A Better Recommendation System**
+
+**Zeynep Tufekci, The New York Times (2018): YouTube, the Great Radicalizer**
+
+**Sanjay Krishnan, Jay Patel, Michael J. Franklin, Ken Goldberg (n/a): Social Influence Bias in Recommender Systems: A Methodology for Learning, Analyzing, and Mitigating Bias in Ratings**
+
+In her article "Up Next: A Better Recommendation System" (Wired, 2018), Renée DiResta explores how recommender systems (particularly on platforms like YouTube) can unintentionally contribute to radicalization by promoting misleading or extremist content. These algorithms are often designed to maximize user engagement by recommending material that provokes strong emotional reactions, which can lead users down so-called “rabbit holes” and expose them to increasingly extreme viewpoints over time. To counter these radicalizing effects and prevent algorithmic discrimination, several key strategies can be implemented.
+
+First, platforms need to reconsider their optimization goals. Rather than solely maximizing engagement metrics like clicks or watch time, algorithms should incorporate ethical objectives such as diversity of information, factual accuracy, and user well-being. This shift would help promote healthier information environments. Introducing human oversight can also provide important contextual judgment where algorithms fall short. Editors or moderators could flag content that may contribute to radicalization and adjust recommendation flows for sensitive topics like politics or health.
+
+Transparency is another crucial element. Regular independent audits of recommender systems can help identify biases and discriminatory patterns, holding platforms accountable for the social impacts of their algorithms. Alongside this, systems should be designed to encourage exploration, rather than reinforcing a user’s existing beliefs. By injecting diverse viewpoints or educational content into recommendation feeds, platforms can help disrupt cycles of confirmation bias.
+
+Furthermore, empowering users with more control over their recommendations, such as adjustable settings or explanations of why content is being suggested, can increase awareness and trust. Government regulation may also be necessary to enforce transparency, fairness, and accountability in platform design. As DiResta argues, the goal isn't to eliminate recommendation engines, but to build them in ways that serve the public good, promote informed discourse, and prevent harm.
